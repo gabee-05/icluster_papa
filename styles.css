@@ -1,0 +1,156 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    color: #914c0f;
+}
+
+/* Encabezado principal: verde azulado con letras blancas */
+.main-header {
+    background-color: #606c38; /* Verde azulado */
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 2em; /* Tamaño de letra más grande para el título */
+    font-weight: bold;
+}
+
+/* Contenedores de sección para la alineación y el ancho */
+.content-section {
+    width: 75%; /* Ocupa 3/4 del horizontal */
+    margin-bottom: 20px; /* Espacio entre secciones */
+    padding: 10px; /* Espaciado interno para el contenido */
+    box-sizing: border-box; /* Incluye padding y borde en el ancho total */
+}
+
+/* Alineación a la derecha */
+.right-aligned {
+    margin-left: 25%; /* Empuja el contenido para que empiece en el 25% de la página */
+    text-align: right; /* Alinea el texto dentro de esta sección a la derecha */
+}
+
+/* Alineación a la izquierda */
+.left-aligned {
+    margin-right: 25%; /* Empuja el contenido para que termine en el 75% de la página */
+    text-align: left; /* Alinea el texto dentro de esta sección a la izquierda */
+}
+
+/* Estilo para los títulos de sección: fondo azul, letras blancas */
+.section-header {
+    background-color: #283618; /* Azul */
+    color: white;
+    padding: 10px 15px; /* Espaciado interno */
+    margin: 0; /* Elimina el margen por defecto del h1 para pegarlo a la caja */
+    display: inline-block; /* Para que el fondo azul solo ocupe el ancho del texto */
+    /* Si quieres que ocupe todo el ancho de su contenedor, usa display: block; */
+    /* width: 100%; */
+}
+
+/* Estilo para los recuadros de información: azul claro con borde */
+.info-box {
+    background-color: #fefae0; /* Un azul muy claro */
+    border: 1px solid #dda15e; /* Borde azul claro */
+    padding: 15px; /* Espaciado interno */
+    margin-top: 5px; /* Pequeño espacio entre el título y la caja */
+    border-radius: 5px;
+    text-align: justify; /* Bordes ligeramente redondeados */
+    /* Asegura que el texto esté alineado según la alineación de la sección */
+}
+
+/* Contenedor del diagrama: para centrar la imagen y posicionar hotspots */
+.diagram-container {
+    position: relative; /* Es crucial para posicionar los hotspots absolutamente */
+    width: 100%;
+    max-width: 800px; /* Un ancho máximo para tu imagen, ajusta si es necesario */
+    margin: 20px auto; /* Centra el contenedor horizontalmente */
+    text-align: center; /* Centra la imagen dentro del contenedor si es más pequeña que max-width */
+}
+
+.diagram-img {
+    width: 100%;
+    height: auto; /* Mantiene la proporción de la imagen */
+    display: block; /* Elimina el espacio extra que a veces deja la imagen */
+}
+
+/* Estilos para los hotspots (áreas clicables sobre la imagen) */
+.hotspot-wrapper {
+    position: absolute; /* Permite posicionar libremente sobre la imagen */
+    /* Puedes ajustar el tamaño de los hotspots aquí o individualmente en el HTML */
+    width: 40px; /* Tamaño del área clicable */
+    height: 40px; /* Tamaño del área clicable */
+    cursor: pointer; /* Cambia el cursor para indicar que es clicable */
+    z-index: 5; /* Asegura que estén por encima de la imagen */
+}
+
+/* Oculta el checkbox real */
+.hotspot-checkbox {
+    display: none;
+}
+
+/* La etiqueta (label) que será el área clicable */
+.hotspot-label {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 123, 255, 0.3); /* Un azul semitransparente para que se vean */
+    border-radius: 50%; /* Hace que el hotspot sea circular */
+    border: 2px solid rgba(255, 255, 255, 0.7); /* Borde blanco para destacarlo */
+    box-sizing: border-box; /* Para que el borde no aumente el tamaño */
+    transition: background-color 0.2s ease; /* Transición suave al pasar el mouse */
+}
+
+/* Efecto hover para el label */
+.hotspot-label:hover {
+    background-color: rgba(0, 123, 255, 0.5); /* Se vuelve más opaco al pasar el mouse */
+}
+
+/* Estilo para el recuadro de información del hotspot: café */
+.hotspot-info {
+    position: absolute;
+    background-color: #8B4513; /* Café */
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 10; /* Asegura que esté por encima de todo */
+    min-width: 200px; /* Ancho mínimo para el recuadro de información */
+    left: 50%; /* Centra el recuadro horizontalmente con respecto a su hotspot */
+    transform: translateX(-50%); /* Ajusta el centrado */
+    bottom: 100%; /* Posiciona el recuadro encima del hotspot */
+    margin-bottom: 10px; /* Espacio entre el hotspot y el recuadro */
+    display: none; /* Inicialmente oculto */
+    text-align: left; /* Asegura que el texto dentro del recuadro esté alineado a la izquierda */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Sombra para que se vea más flotante */
+}
+
+/* REGLA CLAVE: Muestra el recuadro de información cuando el checkbox está marcado */
+.hotspot-checkbox:checked + .hotspot-label + .hotspot-info {
+    display: block;
+}
+
+/* Estilos para la tabla de desafíos y oportunidades */
+table {
+    width: 100%;
+    border-collapse: collapse; /* Elimina el doble borde entre celdas */
+    margin-top: 15px; /* Espacio entre el contenido y la tabla */
+    background-color: #fefae0; /* Fondo blanco para la tabla */
+}
+
+table, th, td {
+    border: 1px solid #bc6c25; /* Bordes suaves para todas las celdas */
+}
+
+th, td {
+    padding: 10px; /* Espaciado interno de las celdas */
+    text-align: center; /* Alineación del texto en celdas */
+}
+
+th {
+    background-color: #e2e9cd; /* Fondo gris claro para los encabezados de la tabla */
+    font-weight: bold; /* Negrita para los encabezados */
+}
+
+/* Alternar colores de filas (opcional, para mejor legibilidad) */
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
