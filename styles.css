@@ -141,13 +141,16 @@ table, th, td {
 }
 
 th, td {
-    padding: 10px; /* Espaciado interno de las celdas */
-    text-align: center; /* Alineación del texto en celdas */
+    padding: 10px; /* Espaciado interno de las celdas *
 }
 
 th {
     background-color: #e2e9cd; /* Fondo gris claro para los encabezados de la tabla */
     font-weight: bold; /* Negrita para los encabezados */
+    text-align: center; /* Alineación del texto en celdas */
+}
+td {
+    text-align: justify; /*Justificar texto de la tabla
 }
 
 /* Alternar colores de filas (opcional, para mejor legibilidad) */
