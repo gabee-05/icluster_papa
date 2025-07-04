@@ -140,16 +140,15 @@ table, th, td {
     border: 1px solid #bc6c25; /* Bordes suaves para todas las celdas */
 }
 
-th, td {
-    padding: 10px; /* Espaciado interno de las celdas *
-}
-
 th {
     background-color: #e2e9cd; /* Fondo gris claro para los encabezados de la tabla */
     font-weight: bold; /* Negrita para los encabezados */
+    padding: 10px; /* Espaciado interno */
     text-align: center; /* Alineación del texto en celdas */
 }
 td {
+    padding: 10px; /* Espaciado interno */
+    font-weight: normal;
     text-align: justify; /*Justificar texto de la tabla
 }
 
